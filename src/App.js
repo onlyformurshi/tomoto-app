@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Container from 'react-bootstrap/Container';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div>
@@ -13,6 +14,7 @@ function App() {
           <Route path='/' element={<Home />} />
         </Routes>
       </Container>
+      <Footer />
 
 
     </div>

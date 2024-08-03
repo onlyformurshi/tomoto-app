@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
 import { assets } from "../../assets/assets"
 import './NavBar.css'
 import { Link } from 'react-router-dom';
+import { StoreContext } from '../../context/StoreContext'
 function NavBar() {
+    const { totalQuantity } = useContext(StoreContext)
     const [navActive, setNavActive] = useState("home")
     return (
         <Navbar className='NavBar' collapseOnSelect expand="lg">
             <Container>
-                <Navbar.Brand as={Link} to="/" href="#home"><img  onClick={() => setNavActive("home")} src={assets.logo} alt="" /></Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" href="#home"><img onClick={() => setNavActive("home")} src={assets.logo} alt="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
@@ -23,9 +24,10 @@ function NavBar() {
                     <Nav>
                         <Nav.Link onClick={() => setNavActive("search")} className={`me-4 ${navActive === "search" ? "active" : ''}`}><img src={assets.search_icon} alt="" /></Nav.Link>
                         <Nav.Link as={Link} to="/cart" onClick={() => setNavActive("cart")} className={`me-4 navbar_cart ${navActive === "cart" ? "active" : ''}`}><img src={assets.basket_icon} alt="" />
-                            <div className="dot">
-                                12
-                            </div>
+                            {totalQuantity ?
+                                <div className="dot">
+                                    {totalQuantity}
+                                </div> : null}
                         </Nav.Link>
                         <button>Sign-In</button>
                     </Nav>
