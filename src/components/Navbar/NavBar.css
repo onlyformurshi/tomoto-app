@@ -1,0 +1,29 @@
+.NavBar button {
+    background-color: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.NavBar button:hover {
+    background-color: #fff4f2;
+}
+.NavBar .navbar-nav .active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid tomato;
+}
+.NavBar .navbar_cart {
+    position: relative;
+}
+.NavBar .dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 4px;
+    border-radius: 50%;
+    background-color: tomato;
+    color: #fff;
+    font-size: 13px;
+}
