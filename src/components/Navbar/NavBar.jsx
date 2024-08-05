@@ -12,7 +12,7 @@ function NavBar() {
     return (
         <Navbar className='NavBar' collapseOnSelect expand="lg">
             <Container>
-                <Navbar.Brand as={Link} to="/" href="#home"><img onClick={() => setNavActive("home")} src={assets.logo} alt="" /></Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" href="#home"><h3>LOGOo</h3></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
