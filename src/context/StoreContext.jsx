@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { createContext } from 'react'
-import { food_list } from '../assets/assets'
+
 
 
 export const StoreContext = createContext(null)
@@ -22,7 +22,6 @@ function StoreContextProvide({ children }) {
     const totalQuantity = Object.values(cartItems).reduce((acc, quantity) => acc + quantity, 0);
 
     const contextvalue = {
-        food_list,
         addToCart,
         removeCart,
         cartItems,

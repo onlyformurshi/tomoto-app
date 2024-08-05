@@ -24,7 +24,7 @@ function FoodItem({ id, image, name, price, description }) {
                     <img src={assets.rating_starts} alt="" />
                 </div>
                 <p className="food-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ad quis quidem, porro eum modi optio dolorum tenetur deserunt veritatis praesentium ab iste ipsa rerum amet eaque! Fugiat, ex inventore!</p>
-                <p className="food-item-price">${price}</p>
+                <p className="food-item-price">$100</p>
 
             </div>
         </div>

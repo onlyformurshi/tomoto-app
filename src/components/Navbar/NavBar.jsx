@@ -6,9 +6,13 @@ import { assets } from "../../assets/assets"
 import './NavBar.css'
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext'
-function NavBar() {
+function NavBar({loginPopover,setLoginPopover}) {
     const { totalQuantity } = useContext(StoreContext)
     const [navActive, setNavActive] = useState("home")
+    const cartAction = () => {
+        setLoginPopover(!loginPopover);
+        
+    }
     return (
         <Navbar className='NavBar' collapseOnSelect expand="lg">
             <Container>
@@ -29,7 +33,7 @@ function NavBar() {
                                     {totalQuantity}
                                 </div> : null}
                         </Nav.Link>
-                        <button>Sign-In</button>
+                        <button onClick={()=>cartAction()}>Login</button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

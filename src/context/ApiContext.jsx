@@ -20,14 +20,17 @@ const ApiProvider = ({ children }) => {
                 setError(error);
             } finally {
                 setLoading(false);
+             
             }
         };
 
 
         fetchData();
     }, []);
+
+
     return (
-        <ApiContext.Provider value={{ meals, loading, error, menu_list }}>
+        <ApiContext.Provider value={{meals, loading, error, menu_list }}>
             {children}
         </ApiContext.Provider>
     );
